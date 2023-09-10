@@ -1,0 +1,40 @@
+// bruete force approach find the largest element first then find the second largest
+#include <bits/stdc++.h> 
+int findSecondLargest(int n, vector<int> &arr)
+{
+    // Write your code here.
+    int maxe=INT_MIN;
+    for(int i=0;i<n;i++){
+        maxe=max(maxe,arr[i]);
+    }
+    int max2=INT_MIN;
+    for(int i=0;i<n;i++){
+        if(arr[i]<maxe &&arr[i]>max2){
+            max2=arr[i];
+        }
+    }
+    if(max2!=INT_MIN)return max2;
+    else return -1;
+}
+
+
+
+//optimal approach traverse the array and for every new element check if it is greater than large initialised to intmin and update seclarge also check if ele is in between seclarge and large
+#include <bits/stdc++.h> 
+int findSecondLargest(int n, vector<int> &arr)
+{
+    // Write your code here.
+    int large=arr[0],seclarge=INT_MIN;
+    for(int i=1;i<n;i++){
+        if(arr[i]>large){
+          seclarge=large; 
+           large=arr[i];
+            
+        }
+        else if(arr[i]>seclarge && arr[i]!=large){
+            seclarge=arr[i];
+        }
+    }
+    if(seclarge!=INT_MIN)return seclarge;
+    else return -1;
+}
