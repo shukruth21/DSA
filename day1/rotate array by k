@@ -1,0 +1,31 @@
+//brute force approach create a function to rotate the array to the left by one element and then use it k times
+void rotateLeft(vector<int> &arr){
+    int ele=arr[0],n=arr.size();
+    for(int i=0;i<n-1;i++){
+        arr[i]=arr[i+1];
+    }
+    arr[n-1]=ele;
+}
+vector<int> rotateArray(vector<int>arr, int k) {
+    // Write your code here.
+    for(int i=0;i<k;i++){
+        rotateLeft(arr);
+    }
+    return arr;
+}
+
+//optimal approach we strore the first k elements in a temp array we shift the n-k elements by k position then add the rest elements
+vector<int> rotateArray(vector<int>arr, int k) {
+    // Write your code here.
+       int n = arr.size();
+    
+    vector < int > temp(n);
+
+    
+    for (int i = 0; i < n; i++) {
+       temp[(i - k + n)%n] = arr[i];
+    }
+    
+    return temp;
+}
+
