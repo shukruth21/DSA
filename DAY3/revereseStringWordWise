@@ -1,0 +1,36 @@
+// traverse the string when space encountered add the stored string untill that point to answer
+#include <iostream>
+using namespace std;
+
+string reverseStringWordWise(string input) {
+  // Write your code here
+int n=input.length();
+string ans="";
+string temp="";
+for(int i=0;i<n;i++){
+    if(input[i]==' '){
+        if(ans==""){
+            ans=temp;
+            temp="";
+        }
+        else{
+        ans= temp+' '+ans;
+        temp="";
+        }
+    }
+    else{
+        temp+=input[i];
+    }
+}
+ans=temp+' '+ans;
+
+return ans;
+}
+
+int main()
+{
+    string s;
+    getline(cin, s);
+    string ans = reverseStringWordWise(s);
+    cout << ans << endl;
+}
