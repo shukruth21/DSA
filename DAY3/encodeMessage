@@ -1,0 +1,24 @@
+// traverse the string and change temp variable and count when new charachter is found and append it to ans
+#include <bits/stdc++.h> 
+string encode(string &message)
+{
+    //   Write your code here.
+     char temp=message[0];
+     int count=1;
+    string ans="";
+    string c="";
+    for(int i=1;i<message.length();i++){
+        if(message[i]==temp){
+            count++;
+        }
+        else {
+             c=to_string(count);
+            ans= ans+ temp + c;
+            temp=message[i];
+            count=1;
+        }
+    }
+    c=to_string(count);
+    ans=ans+temp+c;
+    return ans;
+}
