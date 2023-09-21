@@ -1,0 +1,36 @@
+#include <bits/stdc++.h> 
+int flipBits(int* arr, int n) 
+{
+    // WRITE YOUR CODE HERE
+    int  count=0;
+
+    int ponecount=0;
+
+    int maxcount=0;
+
+    for(int i=0;i<n;i++){
+
+        if(arr[i]){
+
+            count--;
+
+            ponecount++;
+
+        }
+
+        else
+
+            count++;
+
+        maxcount=max(maxcount,count);
+
+        if (count <= 0) {
+
+            count = 0;
+
+        }
+
+    }
+
+    return ponecount+maxcount;
+}
