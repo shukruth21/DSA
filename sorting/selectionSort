@@ -1,3 +1,5 @@
+//selects the min element in each subarray of the loop and then swaps it with the first element
+
 #include <bits/stdc++.h> 
 void selectionSort(vector<int>& arr, int n)
 {   
