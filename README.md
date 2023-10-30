@@ -1,3 +1,3 @@
-# 100DSA challenge 
+# DSA  
 
-solving  dsa problems upto 300 within 100days and consistently
+solving  dsa problems upto 300 consistently
